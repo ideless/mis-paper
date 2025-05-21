@@ -1,0 +1,40 @@
+\documentclass{article}
+
+\usepackage{natbib}
+
+\newcommand{\CiteDesc}[2]{\item[\cite{#1} #2] \hfill \\}
+\newcommand{\Keywords}[1]{\\ \#\textit{#1}}
+
+\begin{document}
+
+\begin{description}
+  \CiteDesc{pichler2018quantum}{arXiv}
+  The first proposal to use Rydberg atom arrays to solve MIS.
+
+  \CiteDesc{pichler2018computational}{arXiv}
+  Showed that find the ground state of Rydberg system is NP-complete.
+  \Keywords{complexity}
+
+  \CiteDesc{kim2022rydberg}{Nature Physics}
+  An early work that demonstrates solving MIS on non-planar graph and high-degree graph using 3D Rydberg atom arrays.
+  \Keywords{3D}
+
+  \CiteDesc{dalyac2024graph}{}
+  Review of graph problems on atom arrays.
+  \Keywords{review}
+
+  \CiteDesc{wurtz2024industry}{arXiv}
+  Industry applications of neutral-atom quantum computing solving MIS.
+
+  \CiteDesc{byun2022finding}{PRX Quantum}
+  Finding the MIS of platonic graphs using Rydberg atoms.
+
+  \CiteDesc{biedl2006three}{Algorithmica}
+  The volume of drawing a graph in 3D space is $\Theta(m\sqrt{n})$.
+  \Keywords{3D}
+\end{description}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}
