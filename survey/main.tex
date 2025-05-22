@@ -1,37 +1,58 @@
 \documentclass{article}
 
+\usepackage{xcolor}
 \usepackage{natbib}
 
-\newcommand{\CiteDesc}[2]{\item[\cite{#1} #2] \hfill \\}
+\newcommand{\DescItem}[2]{\item[{#1}] \hfill \textcolor{blue}{#2}\\}
 \newcommand{\Keywords}[1]{\\ \#\textit{#1}}
+
+\title{Recent progress}
+\author{Rui Mao}
+\date{\today}
 
 \begin{document}
 
+\maketitle
+
 \begin{description}
-  \CiteDesc{pichler2018quantum}{arXiv}
-  The first proposal to use Rydberg atom arrays to solve MIS.
+	\DescItem{\cite{pichler2018quantum}}{}
+	The first proposal to use Rydberg atom arrays to solve MIS.
 
-  \CiteDesc{pichler2018computational}{arXiv}
-  Showed that find the ground state of Rydberg system is NP-complete.
-  \Keywords{complexity}
+	\DescItem{\cite{pichler2018computational}}{}
+	Showed that finding the ground state of Rydberg system is NP-complete.
 
-  \CiteDesc{kim2022rydberg}{Nature Physics}
-  An early work that demonstrates solving MIS on non-planar graph and high-degree graph using 3D Rydberg atom arrays.
-  \Keywords{3D}
+	\DescItem{\cite{kim2022rydberg} Nature Physics}{3D}
+	An early work that demonstrates solving MIS on non-planar graph and high-degree graph using 3D Rydberg atom arrays.
 
-  \CiteDesc{dalyac2024graph}{}
-  Review of graph problems on atom arrays.
-  \Keywords{review}
+	\DescItem{\cite{cain2023quantum}}{}
+	Introduce an additional local Hamiltonian to achieve a quadratic speedup over a wide range of classical algorithms.
 
-  \CiteDesc{wurtz2024industry}{arXiv}
-  Industry applications of neutral-atom quantum computing solving MIS.
+	\DescItem{\textcolor{red}{*}\cite{dalyac2024graph}}{Review}
+	Review of graph problems on atom arrays.
+	It also gives brief discussion on recent hardware progress.
 
-  \CiteDesc{byun2022finding}{PRX Quantum}
-  Finding the MIS of platonic graphs using Rydberg atoms.
+	\DescItem{\cite{wurtz2024industry}}{Applications}
+	Industry applications of neutral-atom quantum computing solving MIS.
 
-  \CiteDesc{biedl2006three}{Algorithmica}
-  The volume of drawing a graph in 3D space is $\Theta(m\sqrt{n})$.
-  \Keywords{3D}
+	\DescItem{\cite{byun2022finding} PRX Quantum}{Platonic graphs}
+	Finding the MIS of platonic graphs using Rydberg atoms.
+
+	\DescItem{\textcolor{red}{*}\cite{biedl2006three}}{VLSI, 3D}
+	The volume of drawing a graph in 3D space is $\Theta(m\sqrt{n})$.
+
+	\DescItem{\textcolor{red}{*}\cite{dalyac2023exploring}}{3D}
+	Introduce the VLSI techniques to give a $O(n^{3/2})$ scheme for bounded degree graphs.
+
+	\DescItem{\textcolor{red}{*}\cite{dell2010satisfiability}}{}
+	Proved that unless PH collapes, there is no efficient and effective sparsification algorithm for SAT and vertex cover.
+	SAT: no polynomial-time algorithm can compress a $n$-variable $d$-CNF formula to $O(n^{d-\epsilon})$ bits without loss of information.
+	Vertex cover: no kernels consisting of $O(k^{2-\epsilon})$ edges.
+	\textbf{TODO:} This paper possibly rules out sparsification algorithm for MIS, but I need to understand what ``kernel'' means.
+
+	\DescItem{\cite{barredo2018synthetic}}{3D, experiment}
+	Demonstrated the realization of fully loaded, arbitrarily-shaped 3D arrays with up to 72 atoms.
+	The method is to first load enough atoms, then move them to the correct positions in a plane-by-plane manner.
+	The move in XY plane in performed by AOD, while the move in Z axis in by tuning the focal length of some lens.
 \end{description}
 
 \bibliographystyle{plainnat}
